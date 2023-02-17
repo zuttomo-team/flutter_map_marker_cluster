@@ -297,6 +297,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         animationController: _zoomController,
         translate: StaticTranslate(_mapCalculator, markerNode.parent!),
         fade: Fade.fadeOut,
+        rotate: widget.options.rotate != true
+            ? null
+            : Rotate(
+                angle: -widget.map.rotationRad,
+                origin: widget.options.rotateOrigin,
+                alignment: widget.options.rotateAlignment,
+              ),
         child: ClusterWidget(
           cluster: markerNode.parent!,
           builder: widget.options.builder,
@@ -320,6 +327,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         MapWidget.static(
           size: clusterNode.size(),
           translate: StaticTranslate(_mapCalculator, clusterNode),
+          rotate: widget.options.rotate != true
+              ? null
+              : Rotate(
+                  angle: -widget.map.rotationRad,
+                  origin: widget.options.rotateOrigin,
+                  alignment: widget.options.rotateAlignment,
+                ),
           child: ClusterWidget(
             cluster: clusterNode,
             builder: widget.options.builder,
@@ -339,6 +353,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         animationController: _zoomController,
         translate: StaticTranslate(_mapCalculator, clusterNode),
         fade: Fade.fadeIn,
+        rotate: widget.options.rotate != true
+            ? null
+            : Rotate(
+                angle: -widget.map.rotationRad,
+                origin: widget.options.rotateOrigin,
+                alignment: widget.options.rotateAlignment,
+              ),
         child: ClusterWidget(
           cluster: clusterNode,
           builder: widget.options.builder,
@@ -377,6 +398,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
               to: clusterNode,
             ),
             fade: Fade.fadeOut,
+            rotate: widget.options.rotate != true
+                ? null
+                : Rotate(
+                    angle: -widget.map.rotationRad,
+                    origin: widget.options.rotateOrigin,
+                    alignment: widget.options.rotateAlignment,
+                  ),
             child: ClusterWidget(
               cluster: child,
               builder: widget.options.builder,
@@ -405,6 +433,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         to: clusterNode.parent!,
       ),
       fade: Fade.fadeIn,
+      rotate: widget.options.rotate != true
+          ? null
+          : Rotate(
+              angle: -widget.map.rotationRad,
+              origin: widget.options.rotateOrigin,
+              alignment: widget.options.rotateAlignment,
+            ),
       child: ClusterWidget(
         cluster: clusterNode,
         builder: widget.options.builder,
@@ -417,6 +452,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
       animationController: _zoomController,
       translate: StaticTranslate(_mapCalculator, clusterNode.parent!),
       fade: Fade.fadeOut,
+      rotate: widget.options.rotate != true
+          ? null
+          : Rotate(
+              angle: -widget.map.rotationRad,
+              origin: widget.options.rotateOrigin,
+              alignment: widget.options.rotateAlignment,
+            ),
       child: ClusterWidget(
         cluster: clusterNode.parent!,
         builder: widget.options.builder,
@@ -436,6 +478,13 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         animationController: _spiderfyController,
         translate: StaticTranslate(_mapCalculator, cluster),
         fade: Fade.almostFadeOut,
+        rotate: widget.options.rotate != true
+            ? null
+            : Rotate(
+                angle: -widget.map.rotationRad,
+                origin: widget.options.rotateOrigin,
+                alignment: widget.options.rotateAlignment,
+              ),
         child: ClusterWidget(
           cluster: cluster,
           builder: widget.options.builder,
